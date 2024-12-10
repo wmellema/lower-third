@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>CasparCG HTML Development Widget</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/css/lower-third.1.css" />
+	</head>
+	<body>
+		<main class="lt-style-one">
+			<div class="graphic">
+				<!-- Styles can be set using the data-style-* attribute. For example: 
+				data-style-primaryColor="stroke" will set the elements' stroke to the value of style.primaryColor -->
+				<svg
+					viewbox="0 0 100 100"
+					preserveAspectRatio="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						vector-effect="non-scaling-stroke"
+						d="M50 100 H0 V0 H50"
+						data-style-primaryColor="stroke"
+					/>
+					<path
+						vector-effect="non-scaling-stroke"
+						d="M50 100 H100 V0 H50"
+						data-style-primaryColor="stroke"
+					/>
+				</svg>
+				<!-- Content can be set using id's. For example:
+				id="title" will set the text value of the element to data.title -->
+				<h1 id="title" data-style-textColor="color">
+					Lower Third Title
+				</h1>
+				<div
+					class="subtitle"
+					data-style-subtitlecolor="color"
+					data-style-primarycolor="background-color"
+				>
+					<p id="subtitle">Subtitle</p>
+				</div>
+			</div>
+		</main>
+		<script src="./node_modules/gsap/dist/gsap.js"></script>
+		<script type="text/javascript" src="/js/dev.js"></script>
+		<script src="/js/lower-third.1.js"></script>
+	</body>
+</html>
