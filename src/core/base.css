@@ -1,0 +1,41 @@
+/*
+ * Base layer for every template.
+ * 1rem = 16px on a 1920-wide channel and scales with the channel resolution,
+ * so templates can be laid out in rem as if designed at 1080p.
+ * Assumes a 16:9 channel.
+ */
+html {
+	font-size: calc(100vw / 120);
+}
+
+html,
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: transparent;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* EBU R 95 safe areas for 16:9 */
+:root {
+	--safe-x: 5vw;
+	--safe-y: 5vh;
+	--action-safe-x: 3.5vw;
+	--action-safe-y: 3.5vh;
+}
+
+[hidden] {
+	display: none !important;
+}
+
+/* Nothing is on screen until the in animation starts. */
+[data-tally-state="idle"] {
+	visibility: hidden;
+}

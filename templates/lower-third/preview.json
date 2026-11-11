@@ -1,0 +1,53 @@
+{
+	"title": "Lower third",
+	"description": "A name strap: the accent bar grows, the panels wipe out of it and the title rises word by word. Several names fit in one payload and NEXT steps through them; an UPDATE on air rolls the text over in place.",
+	"samples": [
+		{
+			"label": "Two names",
+			"data": [
+				{
+					"kicker": "Framework",
+					"title": "Tally",
+					"subtitle": "HTML graphics for CasparCG"
+				},
+				{
+					"kicker": "Lower third",
+					"title": "One template, many steps",
+					"subtitle": "NEXT plays the next item"
+				}
+			]
+		},
+		{
+			"label": "Long text",
+			"data": {
+				"kicker": "Stress test",
+				"title": "The quick brown fox jumps over the lazy dog",
+				"subtitle": "The quick brown fox jumps over the lazy dog"
+			}
+		},
+		{
+			"label": "Title only",
+			"data": {
+				"title": "data-if hides empty fields"
+			}
+		},
+		{
+			"label": "Style: centre, blue",
+			"data": {
+				"style": {
+					"accent": "#3d8bff",
+					"position": "center"
+				}
+			}
+		},
+		{
+			"label": "Style: right, amber",
+			"data": {
+				"style": {
+					"accent": "#ffb020",
+					"position": "right"
+				}
+			}
+		}
+	]
+}

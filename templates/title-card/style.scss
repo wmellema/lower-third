@@ -1,0 +1,120 @@
+// Full-frame explainer card. Each step of the payload is one slide; NEXT
+// moves between them without taking the card off air.
+.card {
+	position: absolute;
+	inset: 0;
+	padding: var(--safe-y) var(--safe-x);
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
+
+.backdrop {
+	position: absolute;
+	inset: 0;
+	background:
+		radial-gradient(ellipse at 85% 10%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 45%),
+		linear-gradient(160deg, #10131b, var(--ink) 60%);
+	z-index: -1;
+}
+
+.top {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	color: var(--muted);
+	font-size: 1.2rem;
+
+	.count {
+		margin-left: auto;
+		font-variant-numeric: tabular-nums;
+	}
+}
+
+.content {
+	align-self: center;
+	display: grid;
+	grid-template-columns: 14rem minmax(0, 1fr);
+	grid-template-areas: "number copy" "number code";
+	column-gap: 3rem;
+	row-gap: 2.5rem;
+	max-width: 100rem;
+}
+
+.number {
+	grid-area: number;
+	font-size: 12rem;
+	font-weight: 900;
+	line-height: 0.85;
+	letter-spacing: -0.06em;
+	color: transparent;
+	-webkit-text-stroke: 0.15rem var(--accent);
+}
+
+.copy {
+	grid-area: copy;
+}
+
+.eyebrow {
+	margin: 0 0 1rem;
+	color: var(--accent);
+}
+
+h1 {
+	margin: 0;
+	font-size: 5.5rem;
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: -0.035em;
+	text-wrap: balance;
+}
+
+.body {
+	margin: 1.5rem 0 0;
+	max-width: 52rem;
+	font-size: 2rem;
+	line-height: 1.4;
+	color: color-mix(in srgb, var(--paper) 72%, transparent);
+	text-wrap: pretty;
+}
+
+.code {
+	grid-area: code;
+	margin: 0;
+	padding: 1.6rem 2rem;
+	max-width: 70rem;
+	background: rgb(255 255 255 / 0.04);
+	border: 1px solid var(--panel-edge);
+	border-left: 0.3rem solid var(--accent);
+	border-radius: 0.35rem;
+	font: 500 1.55rem/1.55 var(--mono);
+	color: #d9dbe3;
+	white-space: pre;
+}
+
+.progress {
+	display: flex;
+	gap: 0.6rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		flex: 1;
+		height: 0.3rem;
+		border-radius: 1rem;
+		background: rgb(255 255 255 / 0.12);
+		overflow: hidden;
+
+		&::before {
+			content: "";
+			display: block;
+			height: 100%;
+			width: var(--fill, 0%);
+			background: var(--accent);
+			transition: width 0.6s ease;
+		}
+		&.done {
+			--fill: 100%;
+		}
+	}
+}

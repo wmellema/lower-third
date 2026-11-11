@@ -1,0 +1,83 @@
+// Score bug, top left. Team colours come from the data via data-var-team.
+.scoreboard {
+	position: absolute;
+	top: var(--action-safe-y);
+	left: var(--action-safe-x);
+	display: grid;
+	justify-items: start;
+}
+
+.board {
+	display: flex;
+	background: var(--panel);
+	border: 1px solid var(--panel-edge);
+	border-radius: 0.35rem 0.35rem 0.35rem 0;
+	overflow: hidden;
+}
+
+.team {
+	--team: var(--accent);
+	display: flex;
+	align-items: center;
+	height: 3.6rem;
+
+	.swatch {
+		align-self: stretch;
+		width: 0.5rem;
+		background: var(--team);
+	}
+	.name {
+		padding: 0 1.2rem;
+		min-width: 9rem;
+		font-size: 1.45rem;
+		font-weight: 800;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+	}
+	&.away .name {
+		text-align: right;
+	}
+	.score {
+		display: grid;
+		place-items: center;
+		align-self: stretch;
+		min-width: 4.2rem;
+		overflow: hidden;
+		background: rgb(255 255 255 / 0.06);
+		font: 700 2rem var(--mono);
+		font-variant-numeric: tabular-nums;
+
+		span {
+			display: block;
+		}
+	}
+}
+
+.home .score {
+	border-right: 1px solid var(--panel-edge);
+}
+
+.meta {
+	display: flex;
+	gap: 1rem;
+	padding: 0.4rem 1rem;
+	background: var(--accent);
+	color: #fff;
+	border-radius: 0 0 0.35rem 0.35rem;
+	font-size: 0.85rem;
+
+	.clock {
+		font-variant-numeric: tabular-nums;
+		opacity: 0.85;
+	}
+}
+
+// Slides out under the board when someone scores.
+.banner {
+	margin-top: 0.5rem;
+	padding: 0.55rem 1.1rem;
+	background: var(--paper);
+	color: var(--ink);
+	border-radius: 0.35rem;
+	visibility: hidden;
+}

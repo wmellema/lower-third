@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Title card</title>
+		<script type="module" src="./main.ts"></script>
+	</head>
+	<body>
+		<section class="card" data-graphic>
+			<div class="backdrop"></div>
+			<header class="top">
+				<span class="tally-light"></span>
+				<span class="kicker" data-field="series">How it works</span>
+				<span class="kicker count"></span>
+			</header>
+			<div class="content">
+				<div class="number" data-field="$number">01</div>
+				<div class="copy">
+					<p class="kicker eyebrow" data-field="kicker">Step</p>
+					<h1 data-field="title">Title</h1>
+					<p class="body" data-field="body" data-if="body"></p>
+				</div>
+				<pre class="code" data-if="code"><code data-field="code"></code></pre>
+			</div>
+			<ol class="progress"></ol>
+		</section>
+	</body>
+</html>

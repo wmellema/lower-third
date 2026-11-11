@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Tally dev harness</title>
+		<script type="module" src="/src/dev/main.ts"></script>
+	</head>
+	<body>
+		<header class="bar">
+			<div class="brand"><span class="tally-light"></span> Tally <span class="muted">dev harness</span></div>
+			<div class="stage-tools">
+				<label>Background
+					<select id="background">
+						<option value="studio">Studio</option>
+						<option value="checker">Checker</option>
+						<option value="black">Black</option>
+						<option value="grey">Grey</option>
+						<option value="green">Chroma green</option>
+					</select>
+				</label>
+				<label><input type="checkbox" id="safe" checked /> Safe areas</label>
+				<button id="reload" title="Reload the template, like a fresh CG ADD">Reload</button>
+				<a id="open" target="_blank">Open alone</a>
+			</div>
+		</header>
+
+		<nav id="templates" aria-label="Templates"></nav>
+
+		<main>
+			<section class="stage-wrap">
+				<div id="stage" class="stage" data-bg="studio">
+					<iframe id="frame" title="Template preview" width="1920" height="1080"></iframe>
+					<div class="safe" aria-hidden="true"><i class="action"></i><i class="graphics"></i></div>
+				</div>
+			</section>
+
+			<section class="transport">
+				<button data-cmd="add" title="Reload, update and play (CG ADD … 1)">Add <kbd>A</kbd></button>
+				<button data-cmd="play">Play <kbd>P</kbd></button>
+				<button data-cmd="next">Next <kbd>N</kbd></button>
+				<button data-cmd="stop">Stop <kbd>S</kbd></button>
+				<button data-cmd="remove">Remove <kbd>R</kbd></button>
+				<button data-cmd="update">Update <kbd>U</kbd></button>
+				<div class="status">
+					<span id="state" class="pill" data-state="idle">idle</span>
+					<span id="step" class="muted"></span>
+				</div>
+			</section>
+
+			<section class="about">
+				<h1 id="title"></h1>
+				<p id="description" class="muted"></p>
+			</section>
+		</main>
+
+		<aside>
+			<section>
+				<h2>Data</h2>
+				<div id="samples" class="chips"></div>
+				<textarea id="payload" spellcheck="false" aria-label="Template data"></textarea>
+				<div class="row">
+					<div class="segmented" role="radiogroup" aria-label="Send as">
+						<label><input type="radio" name="format" value="json" checked /> JSON</label>
+						<label><input type="radio" name="format" value="xml" /> XML</label>
+					</div>
+					<span id="payload-error" class="error"></span>
+				</div>
+			</section>
+
+			<section>
+				<h2>AMCP</h2>
+				<pre id="amcp" class="code"></pre>
+				<button id="copy-amcp" class="small">Copy</button>
+			</section>
+
+			<section>
+				<h2>Actions <span class="muted">CG INVOKE</span></h2>
+				<div id="actions" class="chips"></div>
+				<form id="invoke-form" class="row">
+					<input id="invoke" placeholder="name or name(args)" aria-label="Invoke" />
+					<button>Invoke</button>
+				</form>
+			</section>
+
+			<section class="log-wrap">
+				<h2>Log <button id="clear-log" class="small">Clear</button></h2>
+				<ol id="log"></ol>
+			</section>
+		</aside>
+	</body>
+</html>

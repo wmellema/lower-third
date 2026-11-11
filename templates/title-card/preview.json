@@ -1,0 +1,50 @@
+{
+	"title": "Title card",
+	"description": "A full-frame explainer with four slides in one payload. A custom next hook swaps only the content, and the back() action steps backwards.",
+	"samples": [
+		{
+			"label": "How Tally works",
+			"data": [
+				{
+					"series": "How it works",
+					"kicker": "Markup",
+					"title": "Describe the graphic in HTML",
+					"body": "Bind data with attributes. The markup you write is the fallback when a field is missing.",
+					"code": "<h1 data-field=\"title\">Name</h1>\n<p data-if=\"role\" data-field=\"role\"></p>\n<ul data-list=\"items\"><template><li data-field=\".\"></li></template></ul>"
+				},
+				{
+					"series": "How it works",
+					"kicker": "Motion",
+					"title": "Animate it with anything",
+					"body": "in and out return a promise or a GSAP timeline. The runtime waits for it before the next command runs.",
+					"code": "defineGraphic({\n  in: ({ $ }) => gsap.from($(\"h1\"), { y: 40 }),\n  out: ({ $ }) => gsap.to($(\"h1\"), { opacity: 0 }),\n  actions: { flash: (ctx, text) => … },\n})"
+				},
+				{
+					"series": "How it works",
+					"kicker": "Build",
+					"title": "Ship one file per template",
+					"body": "Scripts, styles and fonts are inlined, so the template loads over file:// with nothing next to it.",
+					"code": "$ npm run build -- --out /casparcg/template\nbuilt title-card.html\nbuilt lower-third.html"
+				},
+				{
+					"series": "How it works",
+					"kicker": "Playout",
+					"title": "Drive it from CasparCG",
+					"body": "ADD, UPDATE, NEXT, STOP and INVOKE map straight onto the template. JSON or the CasparCG Client's XML both work.",
+					"code": "CG 1-20 ADD 1 \"title-card\" 1 \"[{…}, {…}]\"\nCG 1-20 NEXT 1\nCG 1-20 INVOKE 1 \"back\"\nCG 1-20 STOP 1"
+				}
+			]
+		},
+		{
+			"label": "Single slide",
+			"data": {
+				"series": "Tally",
+				"kicker": "Coming up",
+				"title": "HTML graphics for CasparCG",
+				"body": "One small runtime, any graphic you can build in a browser."
+			}
+		},
+		{ "label": "Style: blue accent", "data": { "style": { "accent": "#3d8bff" } } }
+	],
+	"actions": [{ "label": "back", "call": "back" }]
+}

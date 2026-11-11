@@ -1,0 +1,15 @@
+{
+	"title": "Corner bug",
+	"description": "A station bug with a live clock. Actions switch the tally light and flash a temporary label, so CG INVOKE can change it without a new payload.",
+	"samples": [
+		{ "label": "Live with clock", "data": { "label": "Live", "showClock": true } },
+		{ "label": "No clock", "data": { "label": "Demo", "showClock": false } },
+		{ "label": "Style: blue accent", "data": { "style": { "accent": "#1f6feb" } } }
+	],
+	"actions": [
+		{ "label": "onAir", "call": "onAir" },
+		{ "label": "offAir", "call": "offAir" },
+		{ "label": "flash('Replay')", "call": "flash('Replay')" },
+		{ "label": "flash('Breaking', 5)", "call": "flash('Breaking', 5)" }
+	]
+}

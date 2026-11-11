@@ -1,0 +1,66 @@
+// Corner bug, top right inside the action-safe area.
+.bug {
+	position: absolute;
+	top: var(--action-safe-y);
+	right: var(--action-safe-x);
+	display: flex;
+	align-items: stretch;
+	height: 3.25rem;
+	background: var(--panel);
+	border: 1px solid var(--panel-edge);
+	border-radius: 0.35rem;
+	overflow: hidden;
+	box-shadow: 0 0.6rem 2rem rgb(0 0 0 / 0.35);
+}
+
+.mark,
+.clock,
+.label {
+	display: flex;
+	align-items: center;
+	padding: 0 1.1rem;
+}
+
+.mark {
+	gap: 0.65rem;
+	font-size: 1.5rem;
+
+	.word {
+		font-weight: 850;
+		letter-spacing: -0.03em;
+		display: inline-flex;
+	}
+}
+
+.clock {
+	border-left: 1px solid var(--panel-edge);
+	font: 500 1.25rem var(--mono);
+	color: var(--muted);
+	font-variant-numeric: tabular-nums;
+}
+
+.label {
+	font: 700 1rem var(--mono);
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	background: var(--accent);
+	color: #fff;
+	overflow: hidden;
+	transition: background-color 0.4s;
+
+	span {
+		display: inline-block;
+	}
+}
+
+// offAir(): the light drops to standby green and the label goes quiet.
+.bug.off-air {
+	.tally-light {
+		background: var(--preview);
+		box-shadow: 0 0 0.9em color-mix(in srgb, var(--preview) 60%, transparent);
+	}
+	.label {
+		background: rgb(255 255 255 / 0.08);
+		color: var(--muted);
+	}
+}

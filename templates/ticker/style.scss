@@ -1,0 +1,67 @@
+// Full-width crawl along the bottom of the action-safe area.
+.ticker {
+	position: absolute;
+	left: var(--action-safe-x);
+	right: var(--action-safe-x);
+	bottom: var(--action-safe-y);
+	height: 3.5rem;
+	display: flex;
+	background: var(--panel);
+	border: 1px solid var(--panel-edge);
+	border-radius: 0.35rem;
+	overflow: hidden;
+}
+
+.tag {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	gap: 0.7rem;
+	padding: 0 1.4rem;
+	background: var(--accent);
+	color: #fff;
+
+	.tally-light {
+		background: #fff;
+		box-shadow: none;
+	}
+	.kicker {
+		font-size: 1.05rem;
+	}
+}
+
+.crawl {
+	flex: 1;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	mask-image: linear-gradient(90deg, transparent, #000 3rem, #000 calc(100% - 3rem), transparent);
+}
+
+.items {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	white-space: nowrap;
+	will-change: transform;
+
+	li {
+		display: flex;
+		align-items: center;
+		font-size: 1.6rem;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+
+		// A small tally square between items.
+		&::after {
+			content: "";
+			width: 0.45rem;
+			height: 0.45rem;
+			margin: 0 2.2rem;
+			border-radius: 0.1rem;
+			background: var(--accent);
+		}
+	}
+}

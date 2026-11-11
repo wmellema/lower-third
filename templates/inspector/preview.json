@@ -1,0 +1,23 @@
+{
+	"title": "Inspector",
+	"description": "A template that draws the runtime it runs on: the state machine lights up as commands arrive, and the payload and command log update live. Try switching the harness to XML.",
+	"samples": [
+		{
+			"label": "Show info",
+			"data": { "show": "Tally demo", "segment": "Under the hood", "host": "You", "channel": "1-20" }
+		},
+		{
+			"label": "Three steps",
+			"data": [
+				{ "segment": "Markup" },
+				{ "segment": "Motion" },
+				{ "segment": "Playout" }
+			]
+		},
+		{
+			"label": "Nested data",
+			"data": { "home": { "name": "Features", "score": 7 }, "away": { "name": "Bugs", "score": 2 } }
+		}
+	],
+	"actions": [{ "label": "ping", "call": "ping" }, { "label": "ping('with', 2, 'args')", "call": "ping('with', 2, 'args')" }]
+}

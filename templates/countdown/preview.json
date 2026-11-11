@@ -1,0 +1,24 @@
+{
+	"title": "Countdown",
+	"description": "A holding card with a live countdown. The timer runs inside the template; actions start, pause and extend it, and at zero the card turns into an on-air tally.",
+	"samples": [
+		{
+			"label": "30 seconds",
+			"data": { "title": "Tally demo stream", "subtitle": "HTML graphics for CasparCG", "seconds": 30 }
+		},
+		{
+			"label": "5 seconds",
+			"data": { "title": "Almost there", "subtitle": "Watch the tally light", "seconds": 5 }
+		},
+		{
+			"label": "Manual start",
+			"data": { "title": "Waiting for the director", "seconds": 10, "autoStart": false }
+		}
+	],
+	"actions": [
+		{ "label": "start", "call": "start" },
+		{ "label": "pause", "call": "pause" },
+		{ "label": "add(30)", "call": "add(30)" },
+		{ "label": "restart", "call": "restart" }
+	]
+}
