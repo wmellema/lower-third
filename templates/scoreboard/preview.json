@@ -1,0 +1,38 @@
+{
+	"title": "Scoreboard",
+	"description": "Nested fields (home.score), colours from data via data-var-*, and on-air updates that animate only the digits that changed. score() changes the data from CG INVOKE.",
+	"samples": [
+		{
+			"label": "Features vs Bugs",
+			"data": {
+				"home": { "name": "Features", "score": 7, "color": "#22d36b" },
+				"away": { "name": "Bugs", "score": 2, "color": "#ff3b30" },
+				"period": "Sprint 4",
+				"clock": "Day 3"
+			}
+		},
+		{
+			"label": "Features score",
+			"data": {
+				"home": { "name": "Features", "score": 8, "color": "#22d36b" },
+				"away": { "name": "Bugs", "score": 2, "color": "#ff3b30" },
+				"period": "Sprint 4",
+				"clock": "Day 4"
+			}
+		},
+		{
+			"label": "Release day",
+			"data": {
+				"home": { "name": "Tests", "score": 128, "color": "#3d8bff" },
+				"away": { "name": "Failing", "score": 0, "color": "#ffb020" },
+				"period": "v0.1.0"
+			}
+		}
+	],
+	"actions": [
+		{ "label": "score('home')", "call": "score('home')" },
+		{ "label": "score('away')", "call": "score('away')" },
+		{ "label": "score('away', -1)", "call": "score('away', -1)" },
+		{ "label": "resetScores", "call": "resetScores" }
+	]
+}

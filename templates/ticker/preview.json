@@ -1,0 +1,34 @@
+{
+	"title": "Ticker",
+	"description": "A seamless crawl built with data-list. Send UPDATE while it is on air and the custom update hook swaps the headlines without taking the bar off screen.",
+	"samples": [
+		{
+			"label": "Features",
+			"data": {
+				"label": "Tally",
+				"items": [
+					"Templates are plain HTML, CSS and TypeScript",
+					"update() accepts JSON or CasparCG Client XML",
+					"Every command runs through one queue, so animations never overlap",
+					"npm run build gives you one self-contained file per template",
+					"Works over file:// straight from CasparCG's template folder"
+				]
+			}
+		},
+		{
+			"label": "Commands",
+			"data": {
+				"label": "AMCP",
+				"speed": 180,
+				"items": [
+					"CG 1-20 ADD 1 \"ticker\" 1 \"{…}\"",
+					"CG 1-20 UPDATE 1 \"{…}\"",
+					"CG 1-20 NEXT 1",
+					"CG 1-20 INVOKE 1 \"flash('Replay')\"",
+					"CG 1-20 STOP 1"
+				]
+			}
+		},
+		{ "label": "Style: amber", "data": { "style": { "accent": "#ffb020" } } }
+	]
+}

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Countdown</title>
+		<script type="module" src="./main.ts"></script>
+	</head>
+	<body>
+		<div class="countdown" data-graphic>
+			<div class="ring">
+				<svg viewBox="0 0 100 100" aria-hidden="true">
+					<circle class="track" cx="50" cy="50" r="44" pathLength="100" />
+					<circle class="arc" cx="50" cy="50" r="44" pathLength="100" />
+				</svg>
+				<span class="time">0:30</span>
+			</div>
+			<div class="copy">
+				<p class="kicker status"><span class="tally-light"></span> <span class="status-text">Going live in</span></p>
+				<h1 data-field="title">Title</h1>
+				<p class="subtitle" data-field="subtitle" data-if="subtitle"></p>
+			</div>
+		</div>
+	</body>
+</html>

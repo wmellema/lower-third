@@ -1,0 +1,111 @@
+// Name strap in the shared Tally look: an accent bar with a title panel and
+// an optional subtitle strip wiping out of it.
+.lower-third {
+	position: absolute;
+	bottom: var(--safe-y);
+	left: var(--safe-x);
+
+	&[data-style-position="center"] {
+		left: 50%;
+		translate: -50% 0;
+	}
+	&[data-style-position="right"] {
+		left: auto;
+		right: var(--safe-x);
+	}
+}
+
+.graphic {
+	position: relative;
+	min-width: 28rem;
+	max-width: 60rem;
+	padding-left: 0.3rem;
+	// Clips the content while the strap resizes for on-air updates.
+	overflow: hidden;
+	// drop-shadow follows the clipped panels, so no shadow shows before they wipe in.
+	filter: drop-shadow(0 1.2rem 2rem rgb(0 0 0 / 0.4));
+}
+
+.bar {
+	position: absolute;
+	inset: 0 auto 0 0;
+	width: 0.3rem;
+	border-radius: 0.35rem 0 0 0.35rem;
+	background: var(--accent);
+}
+
+.panel,
+.subtitle {
+	position: relative;
+	overflow: hidden;
+}
+
+.panel {
+	padding: 1.1rem 2.2rem 1.2rem 1.8rem;
+	background: var(--panel);
+	border-top-right-radius: 0.35rem;
+
+	&:has(+ .subtitle[hidden]) {
+		border-bottom-right-radius: 0.35rem;
+	}
+
+	.kicker {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		margin: 0 0 0.45rem;
+		overflow: hidden;
+		color: var(--accent);
+	}
+	.kicker-text {
+		display: inline-block;
+	}
+}
+
+// A soft highlight that sweeps across the panel once on the way in.
+.sheen {
+	position: absolute;
+	inset: 0 auto 0 0;
+	width: 40%;
+	background: linear-gradient(100deg, transparent, rgb(255 255 255 / 0.07), transparent);
+	// Hidden at rest; GSAP owns its position, so no CSS transform to fight with.
+	opacity: 0;
+	pointer-events: none;
+}
+
+h1 {
+	margin: 0;
+	font-size: 3.2rem;
+	font-weight: 800;
+	line-height: 1.05;
+	letter-spacing: -0.03em;
+	text-wrap: balance;
+
+	// Words are split at runtime so they can rise one by one.
+	.word {
+		display: inline-block;
+		overflow: hidden;
+		vertical-align: top;
+		// Room for descenders inside the clipping box.
+		padding-bottom: 0.12em;
+		margin-bottom: -0.12em;
+
+		> span {
+			display: inline-block;
+		}
+	}
+}
+
+.subtitle {
+	padding: 0.65rem 2.2rem 0.75rem 1.8rem;
+	background: rgb(24 28 38 / 0.94);
+	border-top: 1px solid var(--panel-edge);
+	border-bottom-right-radius: 0.35rem;
+
+	p {
+		margin: 0;
+		font-size: 1.6rem;
+		font-weight: 500;
+		color: color-mix(in srgb, var(--paper) 72%, transparent);
+	}
+}

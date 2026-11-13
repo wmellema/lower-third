@@ -1,0 +1,92 @@
+// Holding card with a countdown ring, centred in the lower third of the frame.
+.countdown {
+	position: absolute;
+	left: 50%;
+	bottom: calc(var(--safe-y) + 4rem);
+	translate: -50% 0;
+	display: flex;
+	align-items: center;
+	gap: 2.4rem;
+	padding: 1.8rem 3rem 1.8rem 1.8rem;
+	min-width: 56rem;
+	background: var(--panel);
+	border: 1px solid var(--panel-edge);
+	border-radius: 0.6rem;
+	box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 0.45);
+}
+
+.ring {
+	position: relative;
+	flex: none;
+	width: 10rem;
+	height: 10rem;
+	display: grid;
+	place-items: center;
+
+	svg {
+		position: absolute;
+		inset: 0;
+		rotate: -90deg;
+	}
+	circle {
+		fill: none;
+		stroke-width: 5;
+	}
+	.track {
+		stroke: rgb(255 255 255 / 0.08);
+	}
+	.arc {
+		stroke: var(--accent);
+		stroke-linecap: round;
+		stroke-dasharray: 100;
+	}
+	.time {
+		font: 700 2.6rem var(--mono);
+		font-variant-numeric: tabular-nums;
+		letter-spacing: -0.04em;
+	}
+}
+
+.copy {
+	min-width: 0;
+}
+
+.status {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	margin: 0 0 0.6rem;
+	color: var(--muted);
+
+	.tally-light {
+		background: rgb(255 255 255 / 0.2);
+		box-shadow: none;
+	}
+}
+
+h1 {
+	margin: 0;
+	font-size: 3.4rem;
+	font-weight: 800;
+	letter-spacing: -0.03em;
+	line-height: 1.05;
+}
+
+.subtitle {
+	margin: 0.5rem 0 0;
+	font-size: 1.6rem;
+	color: color-mix(in srgb, var(--paper) 65%, transparent);
+}
+
+// At zero the card goes on air.
+.countdown.live {
+	border-color: color-mix(in srgb, var(--accent) 60%, transparent);
+
+	.status {
+		color: var(--accent);
+	}
+	.status .tally-light {
+		background: var(--accent);
+		box-shadow: 0 0 1.2em var(--accent);
+	}
+}

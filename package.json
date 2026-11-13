@@ -1,18 +1,33 @@
 {
-  "dependencies": {
-    "concurrently": "^9.1.0",
-    "gsap": "^3.12.5",
-    "http-server": "^14.1.1",
-    "sass": "^1.82.0"
-  },
-  "name": "lower-third",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "dev": "concurrently --kill-others \"http-server -p8080 -c-1\" \"sass --watch scss:css\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "name": "tally",
+  "version": "0.1.0",
+  "description": "A small framework for building HTML graphics templates for CasparCG",
+  "type": "module",
+  "private": true,
   "license": "ISC",
-  "description": ""
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/build.mjs",
+    "test": "vitest run tests/unit",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run build && vitest run tests/e2e",
+    "cg": "node scripts/cg.mjs",
+    "screens": "npm run build && TALLY_SCREENS=1 vitest run tests/e2e",
+    "new": "node scripts/new.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "jsdom": "^31.0.0",
+    "playwright": "^1.62.0",
+    "sass": "^1.108.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.7",
+    "vite-plugin-singlefile": "^2.3.4",
+    "vitest": "^5.1.0"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "gsap": "^3.15.1"
+  }
 }

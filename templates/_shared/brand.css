@@ -1,0 +1,58 @@
+/* Shared look for the demo templates. Templates override any token through
+   the style payload, e.g. {"style": {"accent": "#1f6feb"}} sets --accent. */
+@font-face {
+	font-family: "Inter";
+	src: url("../../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2") format("woff2");
+	font-weight: 100 900;
+	font-display: block;
+}
+@font-face {
+	font-family: "JetBrains Mono";
+	src: url("../../node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-500-normal.woff2") format("woff2");
+	font-weight: 500;
+	font-display: block;
+}
+@font-face {
+	font-family: "JetBrains Mono";
+	src: url("../../node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-700-normal.woff2") format("woff2");
+	font-weight: 700;
+	font-display: block;
+}
+
+:root {
+	--ink: #0b0d12;
+	--panel: rgb(13 16 23 / 0.94);
+	--panel-edge: rgb(255 255 255 / 0.08);
+	--paper: #f5f2ea;
+	--muted: #8b93a7;
+	--accent: #ff3b30;
+	--preview: #22d36b;
+	--amber: #ffb020;
+	--sans: "Inter", system-ui, sans-serif;
+	--mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+body {
+	font-family: var(--sans);
+	color: var(--paper);
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Small uppercase label used across the demos. */
+.kicker {
+	font-family: var(--mono);
+	font-weight: 700;
+	font-size: 0.875rem;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+}
+
+/* The tally light: the project's signature mark. */
+.tally-light {
+	display: inline-block;
+	width: 0.75em;
+	height: 0.75em;
+	border-radius: 0.15em;
+	background: var(--accent);
+	box-shadow: 0 0 0.9em color-mix(in srgb, var(--accent) 70%, transparent);
+}

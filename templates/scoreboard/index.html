@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Scoreboard</title>
+		<script type="module" src="./main.ts"></script>
+	</head>
+	<body>
+		<div class="scoreboard" data-graphic>
+			<div class="board">
+				<div class="team home" data-var-team="home.color">
+					<span class="swatch"></span>
+					<span class="name" data-field="home.name">Home</span>
+					<span class="score"><span data-field="home.score">0</span></span>
+				</div>
+				<div class="team away" data-var-team="away.color">
+					<span class="score"><span data-field="away.score">0</span></span>
+					<span class="name" data-field="away.name">Away</span>
+					<span class="swatch"></span>
+				</div>
+			</div>
+			<div class="meta">
+				<span class="kicker" data-field="period">Period</span>
+				<span class="kicker clock" data-field="clock" data-if="clock"></span>
+			</div>
+			<div class="banner"><span class="kicker"></span></div>
+		</div>
+	</body>
+</html>
